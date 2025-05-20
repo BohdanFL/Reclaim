@@ -77,7 +77,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.appusagetracker"
+    namespace "com.reclaim"
     defaultConfig {
         applicationId "com.appusagetracker"
         minSdkVersion rootProject.ext.minSdkVersion
