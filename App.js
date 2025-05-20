@@ -1,10 +1,13 @@
 import {NativeModules, Button, FlatList, Text, View, Alert} from 'react-native';
 import React, {useEffect, useState} from 'react';
+import firebase, {getApp} from '@react-native-firebase/app';
+import GoogleSignIn from './components/GoogleSignIn';
 
 const {UsageStatsModule} = NativeModules;
 
 export default function App() {
   const [usageStats, setUsageStats] = useState([]);
+  console.log(getApp().name);
 
   const loadStats = async () => {
     try {
@@ -21,6 +24,7 @@ export default function App() {
 
   return (
     <View style={{padding: 20, flex: 1}}>
+      <GoogleSignIn />
       <Button title="Відкрити дозвіл доступу" onPress={openSettings} />
       <Button title="Завантажити статистику" onPress={loadStats} />
       <FlatList
