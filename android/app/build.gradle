@@ -79,7 +79,7 @@ android {
 
     namespace "com.reclaim"
     defaultConfig {
-        applicationId "com.appusagetracker"
+        applicationId "com.reclaim"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

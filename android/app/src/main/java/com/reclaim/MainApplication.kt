@@ -1,5 +1,5 @@
-// package com.appusagetracker;
-// import com.appusagetracker.UsageStatsPackage;
+// package com.reclaim;
+// import com.reclaim.UsageStatsPackage;
 // import android.app.Application;
 // import com.facebook.react.PackageList;
 // import com.facebook.react.ReactApplication;
@@ -44,8 +44,8 @@
 //     }
 // }
 
-package com.appusagetracker
-import com.appusagetracker.UsageStatsPackage
+package com.reclaim
+import com.reclaim.UsageStatsPackage
 import android.app.Application
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication

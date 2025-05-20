@@ -1,4 +1,4 @@
-package com.appusagetracker;
+package com.reclaim;
 
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;

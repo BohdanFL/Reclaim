@@ -1,4 +1,4 @@
-package com.appusagetracker;
+package com.reclaim;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;

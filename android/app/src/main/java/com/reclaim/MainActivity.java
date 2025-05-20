@@ -1,10 +1,10 @@
-package com.appusagetracker;
+package com.reclaim;
 
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
     @Override
     protected String getMainComponentName() {
-        return "AppUsageTracker"; // або назва твого проєкту з JS
+        return "Reclaim"; // або назва твого проєкту з JS
     }
 }

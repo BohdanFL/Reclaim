@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "AppUsageTracker.app"
-               BlueprintName = "AppUsageTracker"
-               ReferencedContainer = "container:AppUsageTracker.xcodeproj">
+               BuildableName = "Reclaim.app"
+               BlueprintName = "Reclaim"
+               ReferencedContainer = "container:Reclaim.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "AppUsageTrackerTests.xctest"
-               BlueprintName = "AppUsageTrackerTests"
-               ReferencedContainer = "container:AppUsageTracker.xcodeproj">
+               BuildableName = "ReclaimTests.xctest"
+               BlueprintName = "ReclaimTests"
+               ReferencedContainer = "container:Reclaim.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AppUsageTracker.app"
-            BlueprintName = "AppUsageTracker"
-            ReferencedContainer = "container:AppUsageTracker.xcodeproj">
+            BuildableName = "Reclaim.app"
+            BlueprintName = "Reclaim"
+            ReferencedContainer = "container:Reclaim.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AppUsageTracker.app"
-            BlueprintName = "AppUsageTracker"
-            ReferencedContainer = "container:AppUsageTracker.xcodeproj">
+            BuildableName = "Reclaim.app"
+            BlueprintName = "Reclaim"
+            ReferencedContainer = "container:Reclaim.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
