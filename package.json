@@ -1,5 +1,5 @@
 {
-  "name": "AppUsageTracker",
+  "name": "Reclaim",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-firebase/app": "^22.2.0",
     "react": "19.0.0",
     "react-native": "0.79.2"
   },
