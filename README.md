@@ -20,12 +20,12 @@
 
 ## 🛠 Tech Stack
 
-- **Core**: [React Native](https://reactnative.dev/) (JavaScript/TypeScript)
-- **Backend**: [Firebase](https://firebase.google.com/) (Authentication & Realtime Database)
-- **Local Storage**: [MMKV](https://github.com/mrousavy/react-native-mmkv) / SQLite for high-performance data persistence.
-- **Android Integration**: 
-  - `UsageStatsManager` for activity tracking.
-  - `Accessibility Service` for advanced app blocking.
+* **Core**: [React Native](https://reactnative.dev/) (JavaScript/TypeScript)
+* **Backend**: [Firebase](https://firebase.google.com/) (Authentication & Realtime Database)
+* **Local Storage**: [MMKV](https://github.com/mrousavy/react-native-mmkv) / SQLite for high-performance data persistence.
+* **Android Integration**: 
+  * `UsageStatsManager` for activity tracking.
+  * `Accessibility Service` for advanced app blocking.
 
 ---
 
@@ -53,6 +53,7 @@ Reclaim/
 > Ensure you have your [React Native Environment](https://reactnative.dev/docs/set-up-your-environment) set up properly before starting.
 
 ### 1. Clone & Install
+
 ```bash
 git clone https://github.com/BohdanFL/Reclaim.git
 cd Reclaim
@@ -60,11 +61,13 @@ npm install
 ```
 
 ### 2. Start Metro
+
 ```bash
 npm start
 ```
 
 ### 3. Run on Android
+
 ```bash
 npm run android
 ```
