@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Reclaim</string>
+    <string name="accessibility_service_description">Reclaim uses this service to help you maintain healthy app usage habits by monitoring and limiting access to specific apps based on your preferences.</string>
 </resources>

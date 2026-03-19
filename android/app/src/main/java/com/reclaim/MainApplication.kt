@@ -55,6 +55,9 @@ import com.facebook.react.ReactPackage
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.NativeModule
+import com.facebook.react.uimanager.ViewManager
 import com.facebook.react.soloader.OpenSourceMergedSoMapping
 import com.facebook.soloader.SoLoader
 
@@ -64,8 +67,22 @@ class MainApplication : Application(), ReactApplication {
       object : DefaultReactNativeHost(this) {
         override fun getPackages(): List<ReactPackage> =
             PackageList(this).packages.apply {
-              // Packages that cannot be autolinked yet can be added manually here, for example:
-              add(UsageStatsPackage())
+              // Add our custom packages
+              add(object : ReactPackage {
+                override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
+                  return listOf(
+                    UsageStatsModule(reactContext),
+                    AppBlockerModule(reactContext),
+                    OverlayModule(reactContext),
+                    AppListModule(reactContext),
+                    FocusTimerModule(reactContext)
+                  )
+                }
+
+                override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
+                  return emptyList()
+                }
+              })
             }
 
         override fun getJSMainModuleName(): String = "index"
@@ -86,6 +103,7 @@ class MainApplication : Application(), ReactApplication {
       // If you opted-in for the New Architecture, we load the native entry point for this app.
       load()
     }
+
   }
 }
 

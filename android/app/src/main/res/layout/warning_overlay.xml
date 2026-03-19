@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/overlay_background"
+    android:padding="24dp"
+    android:minWidth="280dp"
+    android:maxWidth="320dp"
+    android:elevation="8dp">
+
+    <TextView
+        android:id="@+id/warningMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Got it"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/overlay_button"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+</LinearLayout> 

@@ -86,6 +86,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     signingConfigs {
         debug {
@@ -93,6 +94,12 @@ android {
             storePassword 'android'
             keyAlias 'androiddebugkey'
             keyPassword 'android'
+        }
+        release {
+            storeFile file('release_apk.keystore')
+            storePassword 'hateworld4093'
+            keyAlias 'release_apk_alias'
+            keyPassword 'hateworld4093'
         }
     }
     buildTypes {
@@ -122,4 +129,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation project(':react-native-vector-icons')
 }
+
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")

@@ -1,0 +1,263 @@
+{
+    "users": {
+      "USER_UID_1": {
+        "profile": {
+          "email": "user1@example.com",
+          "displayName": "User One",
+          "photoURL": "url_to_photo_or_null",
+          "createdAt": "2023-01-15T10:00:00Z", // ISO 8601 timestamp
+          "lastLogin": "2024-03-10T12:30:00Z"  // ISO 8601 timestamp
+        },
+        "settings": {
+          "darkModeEnabled": true,
+          "notificationsEnabled": true,
+          "language": "uk" // ISO 639-1 language code
+        },
+        "challenges": [
+          {
+            "id": "digital-detox-1",
+            "type": "digitalDetox", // 'digitalDetox', 'appUsageLimit', 'focusMode'
+            "title": "Цифровий детокс",
+            "description": "Зменшіть час використання екрану на 20% протягом тижня",
+            "status": "active", // 'available', 'active', 'completed', 'failed'
+            "durationDays": 7,
+            "targetReduction": 20, // For digitalDetox: percentage
+            "baselineRequired": true,
+            "startDate": "2024-03-10T00:00:00Z", // ISO 8601, when challenge became active
+            "endDate": "2024-03-17T00:00:00Z",   // ISO 8601
+            "progress": {
+              "currentValue": 15, // For digitalDetox: current reduction %, For appUsageLimit: current usage minutes
+              "targetValue": 20,  // For digitalDetox: target reduction %, For appUsageLimit: dailyLimitMinutes
+              "unit": "% reduction", // '% reduction', 'minutes'
+              "baselineMinutes": 240, // Average daily usage before starting digitalDetox
+              "successfulDays": 0, // For appUsageLimit/multi-day challenges
+              "dailyUsage": [ // For detailed daily tracking within a challenge
+                { "date": "2024-03-10", "minutesUsed": 220, "targetMinutes": 192 /* baseline * (1-targetReduction) */ },
+                { "date": "2024-03-11", "minutesUsed": 210, "targetMinutes": 192 }
+              ],
+              "lastUpdated": "2024-03-11T15:00:00Z"
+            },
+            "completionData": { // Populated when status is 'completed' or 'failed'
+              "completedAt": "2024-03-17T00:00:00Z",
+              "finalProgress": {
+                // Snapshot of progress object at completion
+              },
+              "succeeded": true
+            }
+          },
+          {
+            "id": "app-limit-1",
+            "type": "appUsageLimit",
+            "title": "Контроль соціальних мереж",
+            "description": "Обмежте використання соціальних мереж до 1 години на день",
+            "status": "available",
+            "durationDays": 3,
+            "dailyLimitMinutes": 60,
+            "targetApps": ["com.instagram.android", "com.facebook.katana"],
+            "requireAllDaysSuccess": true,
+            "timeWindow": null, // or { "start": "08:00", "end": "22:00" }
+            "weekendOnly": false,
+            "progress": null, // Populated when active
+            "completionData": null
+          }
+          // ... other challenges
+        ],
+        "baselineData": { // General screen time baseline, recalculated periodically
+          "averageDailyMinutes": 210,
+          "dailyUsage": [ // Past 7 days from calculation
+            { "date": "2024-03-09", "minutes": 200 },
+            { "date": "2024-03-08", "minutes": 220 }
+            // ... up to 7 entries
+          ],
+          "calculatedAt": "2024-03-10T08:00:00Z"
+        },
+        "achievements": {
+          "FIRST_FOCUS": {
+            "unlocked": true,
+            "unlockedAt": "2024-03-05T14:00:00Z",
+            "name": "Перше Фокусування",
+            "description": "Завершіть свою першу сесію фокусування."
+          },
+          "CHALLENGE_COMPLETED_5": {
+            "unlocked": false,
+            "unlockedAt": null,
+            "name": "Майстер Челенджів",
+            "description": "Завершіть 5 челенджів."
+          }
+          // ... other achievementId keys
+        },
+        "goals": { // User-defined app usage limits
+          "com.instagram.android": {
+            "packageName": "com.instagram.android",
+            "appName": "Instagram", // For display purposes, can be fetched or user-defined
+            "timeLimitMinutes": 45,
+            "isActive": true,
+            "createdAt": "2024-03-01T10:00:00Z"
+          },
+          "com.tiktok.android": {
+            "packageName": "com.tiktok.android",
+            "appName": "TikTok",
+            "timeLimitMinutes": 30,
+            "isActive": false,
+            "createdAt": "2024-03-02T11:00:00Z"
+          }
+          // ... other package names as keys
+        },
+        "focusSessions": { // History of focus sessions
+          "SESSION_ID_1": {
+            "startTime": "2024-03-11T09:00:00Z",
+            "endTime": "2024-03-11T09:50:00Z",
+            "durationMinutes": 50,
+            "goalDescription": "Робота над проєктом Х",
+            "appsBlocked": ["com.facebook.katana", "com.instagram.android"],
+            "completedSuccessfully": true
+          }
+          // ... other session IDs as keys
+        },
+        "usageStats": { // Optional: aggregated daily/weekly stats for user's own analytics
+          "daily": {
+            "2024-03-10": { // YYYY-MM-DD
+              "totalScreenTimeMinutes": 280,
+              "mostUsedApp": "com.youtube.android",
+              "appUsage": {
+                "com.youtube.android": 120, // minutes
+                "com.reclaim": 45,
+                "com.twitter.android": 30
+              },
+              "pickups": 50
+            }
+            // ... other dates
+          },
+          "weekly": {
+            "2024-W10": { // YYYY-Www (ISO week)
+              "totalScreenTimeMinutes": 1800,
+              "averageDailyMinutes": 257,
+              "pickupsPerDayAverage": 45
+            }
+            // ... other weeks
+          }
+        }
+      },
+      "USER_UID_2": {
+        // ... data for another user
+      }
+    },
+    "appConfig": { // Global application configuration, less frequently changed
+      "defaultChallenges": [
+        {
+            "id": "digital-detox-1",
+            "type": "digitalDetox",
+            "title": "Цифровий детокс",
+            "description": "Зменшіть час використання екрану на 20% протягом тижня",
+            "status": "available",
+            "durationDays": 7,
+            "targetReduction": 20,
+            "baselineRequired": true
+          },
+          {
+            "id": "app-limit-1",
+            "type": "appUsageLimit",
+            "title": "Контроль соціальних мереж",
+            "description": "Обмежте використання соціальних мереж до 1 години на день",
+            "status": "available",
+            "durationDays": 3,
+            "dailyLimitMinutes": 60,
+            "targetApps": ["com.instagram.android", "com.facebook.katana", "com.twitter.android", "com.tiktok.android", "org.telegram.messenger"],
+            "requireAllDaysSuccess": true
+          },
+          {
+            "id": "digital-detox-2",
+            "type": "digitalDetox",
+            "title": "Вечірній режим",
+            "description": "Не використовуйте телефон за 1 годину до сну",
+            "status": "available",
+            "durationDays": 5,
+            "targetReduction": 100,
+            "timeWindow": { "start": "22:00", "end": "23:00" },
+            "baselineRequired": false
+          },
+          {
+            "id": "app-limit-2",
+            "type": "appUsageLimit",
+            "title": "Продуктивний ранок",
+            "description": "Не відкривайте соціальні мережі в першу годину після пробудження",
+            "status": "available",
+            "durationDays": 4,
+            "timeWindow": { "start": "06:00", "end": "07:00" },
+            "targetApps": ["com.instagram.android", "com.facebook.katana", "com.twitter.android", "com.tiktok.android"],
+            "requireAllDaysSuccess": true
+          },
+          {
+            "id": "digital-detox-3",
+            "type": "digitalDetox",
+            "title": "Вихідний від гаджетів",
+            "description": "Зменшіть використання телефону на 50% у вихідні",
+            "status": "available",
+            "durationDays": 2,
+            "targetReduction": 50,
+            "baselineRequired": true,
+            "weekendOnly": true
+          }
+      ],
+      "availableAchievements": { // Master list of all possible achievements
+        "FIRST_FOCUS": { "name": "Перше Фокусування", "description": "Завершіть свою першу сесію фокусування.", "icon": "url_to_icon" },
+        "CHALLENGE_COMPLETED_5": { "name": "Майстер Челенджів", "description": "Завершіть 5 челенджів.", "icon": "url_to_icon" }
+        // ...
+      },
+      "tipsAndAdvice": { // Глобальний пул порад
+      "categories": {
+        "digitalWellbeing": {
+          "name_uk": "Цифрове благополуччя",
+          "name_en": "Digital Wellbeing",
+          "tips": {
+            "TIP_ID_1": {
+              "title_uk": "Встановіть \"Тихі години\"",
+              "title_en": "Set \"Quiet Hours\"",
+              "content_uk": "Визначте час перед сном, коли ви не користуєтесь телефоном, щоб покращити якість сну.",
+              "content_en": "Define a time before bed when you don't use your phone to improve sleep quality.",
+              "tags": ["sleep", "eveningRoutine"],
+              "difficulty": "easy", // 'easy', 'medium', 'hard'
+              "relatedChallengeType": "digitalDetox" // Може посилатися на тип челенджу
+            },
+            "TIP_ID_2": {
+              "title_uk": "Вимкніть непотрібні сповіщення",
+              "title_en": "Turn Off Unnecessary Notifications",
+              "content_uk": "Залиште тільки найважливіші сповіщення, щоб зменшити кількість відволікань.",
+              "content_en": "Keep only the most important notifications to reduce distractions.",
+              "tags": ["notifications", "focus"],
+              "difficulty": "easy",
+              "relatedChallengeType": "appUsageLimit"
+            }
+            // ... more tips in this category
+          }
+        },"productivity": {
+          "name_uk": "Продуктивність",
+          "name_en": "Productivity",
+          "tips": {
+            "TIP_ID_3": {
+              "title_uk": "Техніка Pomodoro",
+              "title_en": "Pomodoro Technique",
+              "content_uk": "Працюйте інтервалами по 25 хвилин з короткими перервами для підтримки концентрації.",
+              "content_en": "Work in 25-minute intervals with short breaks to maintain concentration.",
+              "tags": ["focus", "work"],
+              "difficulty": "medium",
+              "relatedChallengeType": "focusMode"
+            }
+            // ... more tips in this category
+          }
+        }
+        // ... other categories
+      },
+      "generalTips": { // Поради, що не належать до конкретної категорії
+         "TIP_ID_GENERAL_1": {
+            "title_uk": "Робіть перерви",
+            "title_en": "Take Breaks",
+            "content_uk": "Регулярні перерви від екрану допомагають зменшити втому очей та покращити концентрацію.",
+            "content_en": "Regular breaks from the screen help reduce eye strain and improve concentration.",
+            "tags": ["health", "wellbeing"],
+            "difficulty": "easy"
+         }
+      }
+    }
+  }
+}
